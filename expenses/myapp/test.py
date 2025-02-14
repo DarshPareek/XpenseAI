@@ -1,22 +1,20 @@
 import requests
 from datetime import datetime
 
-# The API endpoint (Make sure Django is running on this port)
+# The API endpoint 
 url = "http://127.0.0.1:8000/api/products/"
 
-# Data to be sent (Ensure fields match Django model)
 data = {
     "name": "Lunch",
-    "price": 15.50,  # Correct field name
+    "price": 15.50, 
     "category": "Food",
-    "date": datetime.today().strftime('%Y-%m-%d')  # Ensure date format
+    "date": datetime.today().strftime('%Y-%m-%d')
 }
 
-# Send POST request
 response = requests.post(url, json=data)
 
-# Handle response
-if response.status_code in [200, 201]:  # Accept both success codes
+
+if response.status_code in [200, 201]: 
     try:
         data = response.json()
         print("Success:", data)

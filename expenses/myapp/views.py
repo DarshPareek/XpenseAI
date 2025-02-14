@@ -4,7 +4,6 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from .models import Product
 from .serializer import ProductSerializer
-from datetime import datetime
 
 @api_view(['GET', 'POST'])
 def product_list(request):
@@ -28,6 +27,7 @@ def product_list(request):
     if request.method == 'POST':
         product_name = request.data.get('name')
         product_price = request.data.get('price')
+        product_category = request.data.get('')
 
         if not product_name or not product_price:
             return Response({"error": "Product name and price are required"}, status=status.HTTP_400_BAD_REQUEST)

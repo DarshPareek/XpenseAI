@@ -5,8 +5,8 @@ from datetime import datetime
 url = "http://127.0.0.1:8000/api/products/"
 
 data = {
-    "name": "Lunch",
-    "price": 15.50, 
+    "name": "momo  ",
+    "price": 150, 
     "category": "Food",
     "date": datetime.today().strftime('%Y-%m-%d')
 }
